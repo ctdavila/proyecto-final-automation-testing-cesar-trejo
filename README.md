@@ -5,7 +5,7 @@ La práctica se realizó sobre el sitio [saucedemo.com](https://www.saucedemo.co
 
 ---
 
-## 📌 Propósito del Proyecto
+## 📌 Propósito del Proyecto:
 
 El objetivo principal es **automatizar flujos básicos de navegación web** usando Selenium WebDriver con Python y gestionarlos bajo Pytest.  
 De esta manera, se busca demostrar:
@@ -35,7 +35,7 @@ Los flujos automatizados incluyen:
 
 ---
 
-## 🛠 Tecnologías Utilizadas
+## 🛠 Tecnologías Utilizadas:
 
 - **Lenguaje:** Python 3.9+  
 - **Framework de pruebas:** Pytest  
@@ -46,7 +46,7 @@ Los flujos automatizados incluyen:
 
 ---
 
-## ⚙️ Instalación de Dependencias
+## ⚙️ Instalación de Dependencias:
 
 Sigue estos pasos para instalar y preparar el proyecto en tu entorno local:
 
