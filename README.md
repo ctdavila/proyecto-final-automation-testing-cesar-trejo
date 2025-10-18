@@ -14,8 +14,9 @@ Validar:
 - Pytest
 - Pytest-HTML
 
-## 1. Clonar el repositorio:
+##  Instalación de Dependencias
+
+1. Clonar el repositorio:
    ```bash
    git clone git@github.com:ctdavila/pre-entrega-automation-testing-cesar-trejo.git
    cd pre-entrega-automation-testing-cesar-trejo
-
