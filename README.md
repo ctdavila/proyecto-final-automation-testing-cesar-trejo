@@ -1,56 +1,59 @@
-# 🧪 Pre-Entrega QA Automatizado – Cesar Trejo
+#Proyecto de Talento Tech
 
-Este proyecto corresponde a la pre-entrega del curso de Testing QA Automatizado y tiene como objetivo aplicar los conocimientos adquiridos hasta la Clase 8.  
-La práctica se realizó sobre el sitio [saucedemo.com](https://www.saucedemo.com/), una aplicación demo pensada para prácticas de testing automatizado.
+##Propósito del proyecto
+Este proyecto nace con la idea de practicar y consolidar habilidades de automatización, aplicando pruebas de UI y API sobre el sitio SauceDemo. La intención no es solo automatizar, sino también construir una base sólida con buenas prácticas como Page Object Model, manejo de datos externos, generación automática de reportes, logs claros y evidencias visuales para cada prueba fallida.
 
----
+##Tecnologías utilizadas
+-Python 3.x
+-Pytest
+-Selenium WebDriver
+-Logging
+-Faker
+-CSV / JSON
+-Requests
 
-## 📌 Propósito del Proyecto:
+###Reportes y Logs
+Durante la ejecución, el proyecto genera diferentes tipos de resultados que ayudan tanto al análisis técnico como al seguimiento del proceso: reporte HTML, capturas de pantalla y archivo de logs.
 
-El objetivo principal es **automatizar flujos básicos de navegación web** usando Selenium WebDriver con Python y gestionarlos bajo Pytest.  
-De esta manera, se busca demostrar:
+##Reporte HTML
+Al finalizar la ejecución, se crea un archivo reporte.html en la carpeta raíz, donde se puede ver el detalle de cada caso de prueba: su estado, duración y cualquier evidencia disponible.
 
-- La **capacidad para diseñar y estructurar casos de prueba automatizados**.  
-- El uso de **esperas explícitas** (`WebDriverWait + Expected Conditions`) para aumentar la estabilidad de los tests.  
-- El diseño de código **modular y organizado**, separando funciones auxiliares (helpers) en `utils/` y casos de prueba en `tests/`.  
-- La integración con **Pytest-HTML** para la generación de reportes en HTML como evidencia de ejecución.
+##Logs de ejecución
+Se registra toda la actividad de las pruebas en el archivo:
+logs/suite.log
+Este archivo permite entender qué ocurrió internamente durante la ejecución, facilitando el análisis y la trazabilidad.
 
-Los flujos automatizados incluyen:
 
-1. **Login**  
-   - Validar el inicio de sesión con credenciales válidas.  
-   - Verificar redirección a `/inventory.html`.  
-   - Comprobar título de la página ("Products") y título de la pestaña ("Swag Labs").  
+##Capturas de pantalla
+Cuando una prueba falla, se guarda automáticamente una captura en:
+reports/screens/
+Estas evidencias visuales ayudan a identificar rápidamente qué salió mal.
 
-2. **Catálogo de productos**  
-   - Validar título correcto de la página de inventario.  
-   - Verificar presencia de al menos un producto.  
-   - Listar nombre y precio del primer producto visible.  
-   - Confirmar la presencia de elementos clave de interfaz (menú, filtros).  
+##Ejecutar todas las pruebas
+Para ejecutar toda la suite de pruebas, simplemente corré:
+python -m run_test.py
 
-3. **Carrito de compras**  
-   - Añadir un producto al carrito.  
-   - Verificar incremento del contador del carrito (badge).  
-   - Navegar al carrito y confirmar que el producto añadido aparece correctamente.  
+##¿Cómo interpretar los reportes?
+Al correr run_test.py, se genera un archivo HTML en la carpeta principal.
+El reporte incluye:
+-Todos los tests ejecutados
+-El estado de cada uno (passed/failed)
+-El tiempo que tardó cada prueba
+-Capturas de pantalla de los casos fallidos
 
----
+##Pruebas incluidas
+-Login exitoso y fallido
+-Login exitoso y fallido utilizando Faker
+-Validaciones del comportamiento en la página de inventario
+-Validaciones en la página del carrito
+-Pruebas de API (Reqres): GET users, POST create user, DELETE user, -Validaciones de códigos HTTP y estructura JSON
 
-## 🛠 Tecnologías Utilizadas:
+##Manejo de datos de prueba
+En la carpeta datos se encuentran los archivos necesarios para alimentar las pruebas:
+data_login.csv → usuarios válidos e inválidos
+productos.json → información de productos para validar comportamientos
 
-- **Lenguaje:** Python 3.9+  
-- **Framework de pruebas:** Pytest  
-- **Automatización:** Selenium WebDriver  
-- **Reportes:** Pytest-HTML  
-- **Control de versiones:** Git + GitHub  
-- **Entorno virtual:** venv (para aislar dependencias)
-
----
-
-## ⚙️ Instalación de Dependencias:
-
-Sigue estos pasos para instalar y preparar el proyecto en tu entorno local:
-
-1. Clonar el repositorio:
-   ```bash
-   git clone git@github.com:ctdavila/pre-entrega-automation-testing-cesar-trejo.git
-   cd pre-entrega-automation-testing-cesar-trejo
+###Conclusión
+Este proyecto está pensado para ser una base simple, clara y adaptable para automatización de pruebas con Python y Pytest. Ofrece un flujo de ejecución accesible mediante run_test.py, con generación automática de reportes que facilitan el análisis posterior.
+La arquitectura permite incorporar nuevos casos y configuraciones sin necesidad de tocar el núcleo, manteniendo buenas prácticas y asegurando que el proyecto pueda crecer de forma ordenada con el tiempo.
+ (docs: actualizar README con mejoras en la documentación)
